@@ -11,7 +11,9 @@ public class EmpWageComputation {
 
 	public void empChecking() {
 		int TotalSalary=0;
-		for(int i=1;i<=TotalDays;i++)
+		int day=0;
+		int noOfHrs=0;
+		while(day<TotalDays && noOfHrs<=100)
 		{		
 			int empCheck=(int) (Math.floor(Math.random()*10)%3);
 			switch(empCheck)
@@ -28,13 +30,16 @@ public class EmpWageComputation {
 				empHrs=0;
 			}
 			TotalSalary=TotalSalary+salary;
+			noOfHrs=noOfHrs+empHrs;
+			day++;
 		}
-		System.out.println("Employee Wage: "+TotalSalary);
-	}
+		System.out.println("Total No Of Hrs: "+noOfHrs);
+		System.out.println("Total Employee Wage: "+TotalSalary);
+}
 
-	public static void main(String[] args) {
-		EmpWageComputation e = new EmpWageComputation();
-		e.empChecking();
-	}
+public static void main(String[] args) {
+	EmpWageComputation e = new EmpWageComputation();
+	e.empChecking();
+}
 
 }
